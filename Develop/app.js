@@ -9,8 +9,10 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const employees = [];
 
 //questions to ask user for input on employee
+//see ../Assets/cited.txt
 const questions = [
   {
     type: "input",
@@ -46,10 +48,69 @@ const questions = [
     name: "school",
     when: (answers) => answers.role === "Intern",
   },
+  {
+    type: "confirm",
+    message: "Do you have another employee?",
+    name: "again",
+    default: true,
+  },
 ];
 
+//see ../Assets/cited.txt
 function init() {
-  inquirer.prompt(questions).then((data) => console.log(data));
+  const trackEmployee = () => {
+    //prompt the questions about the employees
+    inquirer.prompt(questions).then((reply) => {
+      //create new employee using blueprint and save to employees array
+      if (reply.role === "Manager") {
+        //create manager
+        const newEmp = new Manager(
+          reply.name,
+          reply.id,
+          reply.email,
+          reply.officeNumber
+        );
+        employees.push(newEmp);
+      } else if (reply.role === "Engineer") {
+        //create engineer
+        const newEmp = new Engineer(
+          reply.name,
+          reply.id,
+          reply.email,
+          reply.github
+        );
+        employees.push(newEmp);
+      } else if (reply.role === "Intern") {
+        //create intern
+        const newEmp = new Intern(
+          reply.name,
+          reply.id,
+          reply.email,
+          reply.school
+        );
+        employees.push(newEmp);
+      } else {
+        console.log("Error, employee not added successfully");
+      }
+
+      //if they have more employees, re-ask questions
+      if (reply.again) {
+        trackEmployee();
+
+        //if all employees entered, return and end
+      } else {
+        console.log(employees);
+        //create HTML templates
+        const renderedHTML = render(employees);
+
+        //create HTML file
+        fs.writeFile("something.html", renderedHTML, {}, (err) =>
+          err ? console.log(err) : console.log("HTML file created")
+        );
+      }
+    });
+  };
+  trackEmployee();
 }
 
 init();

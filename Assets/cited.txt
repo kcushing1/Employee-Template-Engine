@@ -1,0 +1,6 @@
+"when" within questions array:
+  Gathu, Boswell & Leymet, Arnaud. Stackoverflow. "Conditional Prompt rendering in Inquirer?". https://stackoverflow.com/questions/56412516/conditional-prompt-rendering-in-inquirer
+
+repeat prompt within function init():
+  klugjo. Stackoverflow. "How to run for loop asynchronously with inquirer prompt". https://stackoverflow.com/questions/47665616/how-to-run-for-loop-asynchronously-with-inquirer-prompt
+
