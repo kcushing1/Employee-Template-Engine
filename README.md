@@ -6,6 +6,16 @@
 
 A node CLI app that intakes employee information for a team and outputs an HTML file displaying each employee inputted.
 
+## Table of Contents
+
+- [Demonstration](#demonstration)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
+
 ## Demonstration
 
 The resulting team page will look like:
@@ -13,16 +23,7 @@ The resulting team page will look like:
 
 https://drive.google.com/file/d/1bmnnQZ1rufi3SERUS8mnSxeTdocZFkgp/view
 
-![Employee Template Engine Demo](./Assets/Employee/Template/Generator-Demo.GIF)
-
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [License](#license)
-- [Contributing](#contributing)
-- [Tests](#tests)
-- [Questions](#questions)
+![Employee Template Engine Demo](./Assets/Employee-Template-Generator-Demo.GIF)
 
 ## Installation
 
