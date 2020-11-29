@@ -18,11 +18,32 @@ const questions = [
     type: "input",
     message: "What is the employee's name?",
     name: "name",
+    validate: (answers) => {
+      //see ../Assets/cited.txt
+      if (!/^[a-zA-Z]+$/.test(answers)) {
+        console.log("Please input alphabet characters only");
+        return false;
+      } else {
+        return true;
+      }
+    },
   },
   {
     type: "input",
-    message: "What is the Employee's ID number?",
+    message: "What is the employee's ID number?",
     name: "id",
+  },
+  {
+    type: "input",
+    message: "What is the employee's email?",
+    name: "email",
+    validate: (answers) => {
+      if (answers.includes("@")) {
+        return true;
+      } else {
+        console.log("Please enter a valid email");
+      }
+    },
   },
   {
     type: "list",
@@ -61,11 +82,16 @@ function init() {
   const trackEmployee = () => {
     //prompt the questions about the employees
     inquirer.prompt(questions).then((reply) => {
+      //capitalize first letter of name
+      const capitalize = (name) => {
+        return name.charAt(0).toUpperCase() + name.toLowerCase().slice(1);
+      };
+
       //create new employee using blueprint and save to employees array
       if (reply.role === "Manager") {
         //create manager
         const newEmp = new Manager(
-          reply.name,
+          capitalize(reply.name),
           reply.id,
           reply.email,
           reply.officeNumber
@@ -74,7 +100,7 @@ function init() {
       } else if (reply.role === "Engineer") {
         //create engineer
         const newEmp = new Engineer(
-          reply.name,
+          capitalize(reply.name),
           reply.id,
           reply.email,
           reply.github
@@ -83,7 +109,7 @@ function init() {
       } else if (reply.role === "Intern") {
         //create intern
         const newEmp = new Intern(
-          reply.name,
+          capitalize(reply.name),
           reply.id,
           reply.email,
           reply.school
@@ -104,7 +130,7 @@ function init() {
         const renderedHTML = render(employees);
 
         //create HTML file
-        fs.writeFile("something.html", renderedHTML, {}, (err) =>
+        fs.writeFile(outputPath, renderedHTML, {}, (err) =>
           err ? console.log(err) : console.log("HTML file created")
         );
       }

@@ -4,3 +4,6 @@
 repeat prompt within function init():
   klugjo. Stackoverflow. "How to run for loop asynchronously with inquirer prompt". https://stackoverflow.com/questions/47665616/how-to-run-for-loop-asynchronously-with-inquirer-prompt
 
+name validation - check if there is alpha only characters
+  Casimir et Hippolyte. Stackoverflow. "Check if string contains only letters in javascript ". https://stackoverflow.com/questions/23476532/check-if-string-contains-only-letters-in-javascript
+

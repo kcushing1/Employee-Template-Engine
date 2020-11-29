@@ -1,0 +1,26 @@
+body {
+  background-color: dimgray;
+  color: darkslategrey;
+}
+
+.team-heading {
+  background-color: lightskyblue;
+  font-family: "Special Elite", cursive;
+}
+
+.team-area .card-header {
+  background-color: lightgoldenrodyellow;
+  font-family: "Special Elite", cursive;
+}
+
+.team-area .list-group-item {
+  background-color: #e6f5ff;
+}
+
+.team-area .card-body {
+  background-color: whitesmoke;
+}
+
+.employee-card {
+  margin: 2%;
+}
