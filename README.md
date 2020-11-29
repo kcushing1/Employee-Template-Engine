@@ -6,6 +6,15 @@
 
 A node CLI app that intakes employee information for a team and outputs an HTML file displaying each employee inputted.
 
+## Demonstration
+
+The resulting team page will look like:
+![Team Page Generated](./Assets/team-generated.JPG)
+
+https://drive.google.com/file/d/1bmnnQZ1rufi3SERUS8mnSxeTdocZFkgp/view
+
+![Employee Template Engine Demo](./Assets/Employee/Template/Generator-Demo.GIF)
+
 ## Table of Contents
 
 - [Installation](#installation)
