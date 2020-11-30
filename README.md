@@ -23,7 +23,7 @@ The resulting team page will look like:
 
 https://drive.google.com/file/d/1bmnnQZ1rufi3SERUS8mnSxeTdocZFkgp/view
 
-![Employee Template Engine Demo](./Assets/Employee-Template-Generator-Demo.GIF)
+![Employee Template Engine Demo](./Assets/Employee-Template-Generator-Demo.gif)
 
 ## Installation
 
